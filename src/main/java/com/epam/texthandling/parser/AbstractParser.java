@@ -1,8 +1,8 @@
 package com.epam.texthandling.parser;
 
-public abstract class AbstractParser implements Parser{
+public abstract class AbstractParser implements Parser {
 
-    private Parser successor;
+    private final Parser successor;
 
     public AbstractParser(Parser successor) {
         this.successor = successor;
@@ -11,4 +11,5 @@ public abstract class AbstractParser implements Parser{
     protected Parser getSuccessor() {
         return successor;
     }
+
 }
