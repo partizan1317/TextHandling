@@ -5,18 +5,14 @@ import com.epam.texthandling.entity.Composite;
 
 public class ParagraphParser extends AbstractParser {
 
+    private static final String PARAGRAPH_DELIMITER_REGEX = "\n";
+
     public ParagraphParser(Parser successor) {
         super(successor);
     }
 
     @Override
     public Component parse(String text) {
-        Composite composite = new Composite();
-        String[] parts = text.split("\n");
-        for (String part : parts) {
-            Component paragraph = getSuccessor().parse(part);
-            composite.addChild(paragraph);
-        }
-        return composite;
+        return templateParse(text, PARAGRAPH_DELIMITER_REGEX);
     }
 }

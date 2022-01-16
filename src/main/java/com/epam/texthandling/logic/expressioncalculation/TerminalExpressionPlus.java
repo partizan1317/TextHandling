@@ -1,4 +1,7 @@
-package com.epam.texthandling.interpreter;
+package com.epam.texthandling.logic.expressioncalculation;
+
+import com.epam.texthandling.logic.expressioncalculation.AbstractMathExpression;
+import com.epam.texthandling.logic.expressioncalculation.Context;
 
 public class TerminalExpressionPlus extends AbstractMathExpression {
 

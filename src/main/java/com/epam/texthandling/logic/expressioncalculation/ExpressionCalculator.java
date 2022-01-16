@@ -1,13 +1,13 @@
-package com.epam.texthandling.interpreter;
+package com.epam.texthandling.logic.expressioncalculation;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Client {
+public class ExpressionCalculator {
     
     private final ArrayList<AbstractMathExpression> listExpression;
 
-    public Client(String expression) {
+    public ExpressionCalculator(String expression) {
         listExpression = new ArrayList<>();
 
     }
