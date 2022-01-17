@@ -16,7 +16,7 @@ public class Lexeme implements Component {
         return new Lexeme(value, LexemeType.WORD);
     }
 
-    private static Lexeme expression(String value) {
+    public static Lexeme expression(String value) {
         return new Lexeme(value, LexemeType.EXPRESSION);
     }
 

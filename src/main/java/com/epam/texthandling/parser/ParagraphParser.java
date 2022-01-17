@@ -5,7 +5,7 @@ import com.epam.texthandling.entity.Composite;
 
 public class ParagraphParser extends AbstractParser {
 
-    private static final String PARAGRAPH_DELIMITER_REGEX = "\n";
+    private static final String PARAGRAPH_DELIMITER_REGEX = "(?<=[?!.])\\s";
 
     public ParagraphParser(Parser successor) {
         super(successor);
