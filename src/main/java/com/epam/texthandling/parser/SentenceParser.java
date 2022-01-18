@@ -1,6 +1,5 @@
 package com.epam.texthandling.parser;
 
-import com.epam.texthandling.entity.Component;
 import com.epam.texthandling.entity.Composite;
 import com.epam.texthandling.entity.Lexeme;
 
@@ -13,7 +12,7 @@ public class SentenceParser extends AbstractParser {
     }
 
     @Override
-    public Component parse(String text) {
+    public Composite parse(String text) {
         Composite composite = new Composite();
         String[] lexemes = text.split(SENTENCE_DELIMITER_REGEX);
         for (String lexeme : lexemes) {

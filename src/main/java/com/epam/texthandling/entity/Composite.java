@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Composite implements Component {
 
-    private final List<Component> children = new ArrayList<Component>();
+    private final List<Component> children = new ArrayList<>();
 
     public void addChild(Component child) {
         children.add(child);

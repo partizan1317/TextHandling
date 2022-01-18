@@ -12,7 +12,7 @@ public class ParagraphParser extends AbstractParser {
     }
 
     @Override
-    public Component parse(String text) {
+    public Composite parse(String text) {
         return templateParse(text, PARAGRAPH_DELIMITER_REGEX);
     }
 }

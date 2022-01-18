@@ -3,11 +3,11 @@ package com.epam.texthandling.logic.expressioncalculation;
 import com.epam.texthandling.logic.expressioncalculation.AbstractMathExpression;
 import com.epam.texthandling.logic.expressioncalculation.Context;
 
-public class NonterminalExpressionNumber extends AbstractMathExpression {
+public class NonTerminalExpressionNumber extends AbstractMathExpression {
 
     private final int number;
 
-    public NonterminalExpressionNumber(int number) {
+    public NonTerminalExpressionNumber(int number) {
         this.number = number;
     }
 

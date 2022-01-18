@@ -1,20 +1,18 @@
 package com.epam.texthandling.logic.expressioncalculation;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ExpressionCalculator {
+
+    private static final String LEXEME_DELIMITER = " ";
     
-    private final ArrayList<AbstractMathExpression> listExpression;
+    private final List<AbstractMathExpression> listExpression = new ArrayList<>();
 
-    public ExpressionCalculator(String expression) {
-        listExpression = new ArrayList<>();
-
-    }
-
-    private void parse(String expression) {
-        for (String lexeme : expression.split("\\p{Blank}+")) {
-            if (lexeme.isEmpty()) {
+    private int parseLexeme(String expression) {
+        for (String lexeme : expression.split(LEXEME_DELIMITER)) {
+            if (lexeme.isEmpty() || lexeme.length() > 1 && addNumberToExpression(lexeme)) {
                 continue;
             }
             char temp = lexeme.charAt(0);
@@ -32,17 +30,25 @@ public class ExpressionCalculator {
                     listExpression.add(new TerminalExpressionMultiply());
                     break;
                 default:
-                    Scanner scan = new Scanner(lexeme);
-                    if(scan.hasNextInt()) {
-                        listExpression.add(new NonterminalExpressionNumber(scan.nextInt()));
-                    }
+                    addNumberToExpression(lexeme);
 
             }
 
         }
+        return calculate();
     }
 
-    public Number calculate() {
+    private boolean addNumberToExpression(String lexeme) {
+        Scanner scan = new Scanner(lexeme);
+        if(scan.hasNextInt()) {
+            listExpression.add(new NonTerminalExpressionNumber(scan.nextInt()));
+        } else {
+            return false;
+        }
+        return true;
+    }
+
+    public int calculate() {
         Context context = new Context();
         for (AbstractMathExpression terminal : listExpression) {
             terminal.interpret(context);

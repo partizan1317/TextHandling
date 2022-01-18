@@ -1,6 +1,5 @@
 package com.epam.texthandling.parser;
 
-import com.epam.texthandling.entity.Component;
 import com.epam.texthandling.entity.Composite;
 
 public abstract class AbstractParser implements Parser {
@@ -23,7 +22,7 @@ public abstract class AbstractParser implements Parser {
         Composite composite = new Composite();
         String[] parts = text.split(delimiterRegex);
         for (String part : parts) {
-            Component paragraph = getSuccessor().parse(part);
+            Composite paragraph = getSuccessor().parse(part);
             composite.addChild(paragraph);
         }
         return composite;

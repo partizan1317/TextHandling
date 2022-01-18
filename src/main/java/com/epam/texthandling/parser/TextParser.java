@@ -1,6 +1,5 @@
 package com.epam.texthandling.parser;
 
-import com.epam.texthandling.entity.Component;
 import com.epam.texthandling.entity.Composite;
 
 public class TextParser extends AbstractParser {
@@ -11,7 +10,7 @@ public class TextParser extends AbstractParser {
         super(successor);
     }
 
-    public Component parse(String text){
+    public Composite parse(String text){
         return templateParse(text, TEXT_DELIMITER_REGEX);
     }
 }
