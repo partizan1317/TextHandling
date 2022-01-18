@@ -10,7 +10,7 @@ public class ExpressionCalculator {
     
     private final List<AbstractMathExpression> listExpression = new ArrayList<>();
 
-    private int parseLexeme(String expression) {
+    private Integer parseLexeme(String expression) {
         for (String lexeme : expression.split(LEXEME_DELIMITER)) {
             if (lexeme.isEmpty() || lexeme.length() > 1 && addNumberToExpression(lexeme)) {
                 continue;
@@ -48,10 +48,10 @@ public class ExpressionCalculator {
         return true;
     }
 
-    public int calculate() {
+    public Integer calculate() {
         Context context = new Context();
-        for (AbstractMathExpression terminal : listExpression) {
-            terminal.interpret(context);
+        for (AbstractMathExpression expression : listExpression) {
+            expression.interpret(context);
         }
         return context.popValue();
     }

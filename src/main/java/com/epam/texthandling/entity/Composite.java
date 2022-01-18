@@ -5,10 +5,25 @@ import java.util.List;
 
 public class Composite implements Component {
 
-    private final List<Component> children = new ArrayList<>();
+    private final List<Component> components = new ArrayList<>();
 
-    public void addChild(Component child) {
-        children.add(child);
+    public Composite(){
+    }
+
+    public Composite(List<? extends Component> components) {
+        this.components.addAll(components);
+    }
+
+    public void addComponent(Component component) {
+        components.add(component);
+    }
+
+    public List<Component> getComponents() {
+        return new ArrayList<>(components);
+    }
+
+    public int getComponentsSize() {
+        return components.size();
     }
 
     @Override
@@ -20,18 +35,18 @@ public class Composite implements Component {
             return false;
         }
         Composite composite = (Composite) o;
-        return children.equals(composite.children);
+        return components.equals(composite.components);
     }
 
     @Override
     public int hashCode() {
-        return children.hashCode();
+        return components.hashCode();
     }
 
     @Override
     public String toString() {
         return "Composite{" +
-                "components= " + children +
+                "components= " + components +
                 "}";
     }
 }

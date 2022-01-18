@@ -1,6 +1,5 @@
 package com.epam.texthandling.parser;
 
-import com.epam.texthandling.entity.Component;
 import com.epam.texthandling.entity.Composite;
 
 public class ParagraphParser extends AbstractParser {

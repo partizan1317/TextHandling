@@ -23,7 +23,7 @@ public abstract class AbstractParser implements Parser {
         String[] parts = text.split(delimiterRegex);
         for (String part : parts) {
             Composite paragraph = getSuccessor().parse(part);
-            composite.addChild(paragraph);
+            composite.addComponent(paragraph);
         }
         return composite;
     }
