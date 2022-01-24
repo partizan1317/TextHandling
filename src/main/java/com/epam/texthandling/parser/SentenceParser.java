@@ -5,7 +5,7 @@ import com.epam.texthandling.entity.Lexeme;
 
 public class SentenceParser extends AbstractParser {
 
-    private static final String SENTENCE_DELIMITER_REGEX = "\\s(?=\\[)|(?<=[]])\\s|\\s(?=[a-zA-Z-])";
+    private static final String SENTENCE_DELIMITER_REGEX = "\\s(?=\\[)|(?<=[]])\\s|\\s(?=[a-zA-Z])";
 
     public SentenceParser() {
         super();
@@ -23,7 +23,7 @@ public class SentenceParser extends AbstractParser {
             else {
                 convertedLexeme = Lexeme.word(lexeme);
             }
-            composite.addChild(convertedLexeme);
+            composite.addComponent(convertedLexeme);
         }
         return composite;
     }

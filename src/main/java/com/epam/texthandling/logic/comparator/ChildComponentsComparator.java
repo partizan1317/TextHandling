@@ -7,6 +7,8 @@ import java.util.Comparator;
 public class ChildComponentsComparator implements Comparator<Composite> {
     @Override
     public int compare(Composite firstComposite, Composite secondComposite) {
-        return firstComposite.getComponentsSize() - secondComposite.getComponentsSize();
+        int firstCompositeComponentsSize = firstComposite.getComponentsSize();
+        int secondCompositeComponentsSize = secondComposite.getComponentsSize();
+        return firstCompositeComponentsSize - secondCompositeComponentsSize;
     }
 }

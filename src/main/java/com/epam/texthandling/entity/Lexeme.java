@@ -47,7 +47,7 @@ public class Lexeme implements Component {
     public String toString(){
         return "Lexeme[" +
                 "value= " + value +
-                "lexemeType= " + lexemeType +
+                ", lexemeType= " + lexemeType +
                 "]";
     }
 }
