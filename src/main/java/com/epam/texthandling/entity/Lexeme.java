@@ -20,6 +20,18 @@ public class Lexeme implements Component {
         return new Lexeme(value, LexemeType.EXPRESSION);
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public LexemeType getLexemeType() {
+        return lexemeType;
+    }
+
+    public int getValueSize() {
+        return value.length();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
